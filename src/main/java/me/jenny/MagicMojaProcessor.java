@@ -61,6 +61,8 @@ public class MagicMojaProcessor extends AbstractProcessor {
             // 타입을 만든다.
             TypeSpec magicMoja = TypeSpec.classBuilder("MagicMoja")    // 빌더 안에 simple name 에 해당하는 이름 주면 된다.
                     .addModifiers(Modifier.PUBLIC)
+                    // 애노테이션 붙어있는 className 을 구현하는(implements) MagicMoja 클래스
+                    .addSuperinterface(className)
                     .addMethod(pullOut)
                     .build();
 
